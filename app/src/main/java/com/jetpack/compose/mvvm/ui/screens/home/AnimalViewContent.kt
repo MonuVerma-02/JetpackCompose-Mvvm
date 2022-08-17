@@ -31,7 +31,7 @@ fun AnimalViewContent(animal: Animal, navController: NavHostController) {
             .clickable {
                 //pass animal object to Details Screen
                 navController.currentBackStackEntry?.arguments?.putParcelable(
-                    Constants.ANIMAL_Details_KEY,
+                    Constants.ANIMAL_DETAILS_KEY,
                     animal
                 )
                 navController.navigate(Screen.Details.route)

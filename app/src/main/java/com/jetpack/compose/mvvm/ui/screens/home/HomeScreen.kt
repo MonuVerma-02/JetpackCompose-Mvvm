@@ -91,11 +91,11 @@ fun AnimalList(
         LazyRow(
             modifier = Modifier.fillMaxWidth(),
             content = {
-                val dogs: List<Animal> = state.value.animals
-                items(dogs.size) { i ->
-                    val dog = state.value.animals[i]
+                val animals: List<Animal> = state.value.animals
+                items(animals.size) { i ->
+                    val animal = state.value.animals[i]
 
-                    AnimalViewContent(animal = dog, navController = navController)
+                    AnimalViewContent(animal = animal, navController = navController)
                 }
             }
         )

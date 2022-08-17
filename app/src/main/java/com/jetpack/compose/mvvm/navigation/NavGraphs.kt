@@ -32,8 +32,8 @@ fun NavGraphs(navController: NavHostController) {
             route = Screen.Details.route
         ) {
             //Fetching the argument which has been passed
-            var animal =
-                navController.previousBackStackEntry?.arguments?.getParcelable<Animal>(Constants.ANIMAL_Details_KEY)
+            val animal =
+                navController.previousBackStackEntry?.arguments?.getParcelable<Animal>(Constants.ANIMAL_DETAILS_KEY)
             animal?.let {
                 DetailsScreen(animal = it, navController = navController)
             }
