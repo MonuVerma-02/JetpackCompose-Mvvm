@@ -62,3 +62,8 @@ Dependencies can only point inwards.
 ## Screenshots
 |<img src="screenshots/screen_1.jpg" width=200/>|<img src="screenshots/screen_2.jpg" width=200/>|<img src="screenshots/screen_3.jpg" width=200/>|
 |:----:|:----:|:----:|
+
+## Demo
+https://user-images.githubusercontent.com/99521892/185385516-ee07c42d-1809-43f0-b145-735e9409e99d.mp4
+
+
