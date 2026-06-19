@@ -39,12 +39,10 @@ class HomeViewModel @Inject constructor(
                         )
                     }
                     is Result.Success -> {
-                        _dogState.value = result.data?.let {
-                            dogState.value.copy(
-                                animals = AnimalUIMapper().toUI(it),
-                                isLoading = false
-                            )
-                        }
+                        _dogState.value = dogState.value.copy(
+                            animals = AnimalUIMapper().toUI(result.data),
+                            isLoading = false
+                        )
                     }
                     is Result.Error -> {
                         _dogState.value = dogState.value.copy(
@@ -71,12 +69,10 @@ class HomeViewModel @Inject constructor(
                         )
                     }
                     is Result.Success -> {
-                        _catState.value = result.data?.let {
-                            catState.value.copy(
-                                animals = AnimalUIMapper().toUI(it),
-                                isLoading = false
-                            )
-                        }
+                        _catState.value = catState.value.copy(
+                            animals = AnimalUIMapper().toUI(result.data),
+                            isLoading = false
+                        )
                     }
                     is Result.Error -> {
                         _catState.value = catState.value.copy(
@@ -103,12 +99,10 @@ class HomeViewModel @Inject constructor(
                         )
                     }
                     is Result.Success -> {
-                        _rabbitState.value = result.data?.let {
-                            rabbitState.value.copy(
-                                animals = AnimalUIMapper().toUI(it),
-                                isLoading = false
-                            )
-                        }
+                        _rabbitState.value = rabbitState.value.copy(
+                            animals = AnimalUIMapper().toUI(result.data),
+                            isLoading = false
+                        )
                     }
                     is Result.Error -> {
                         _rabbitState.value = rabbitState.value.copy(

@@ -31,9 +31,10 @@ fun NavGraphs(navController: NavHostController) {
         composable(
             route = Screen.Details.route
         ) {
-            //Fetching the argument which has been passed
+            // Fetching the animal object from savedStateHandle
             val animal =
-                navController.previousBackStackEntry?.arguments?.getParcelable<Animal>(Constants.ANIMAL_DETAILS_KEY)
+                navController.previousBackStackEntry?.savedStateHandle?.get<Animal>(Constants.ANIMAL_DETAILS_KEY)
+
             animal?.let {
                 DetailsScreen(animal = it, navController = navController)
             }

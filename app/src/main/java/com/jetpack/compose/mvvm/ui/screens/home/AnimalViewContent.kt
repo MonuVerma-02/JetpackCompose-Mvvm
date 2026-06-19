@@ -29,8 +29,8 @@ fun AnimalViewContent(animal: Animal, navController: NavHostController) {
         modifier = Modifier
             .padding(top = 10.dp, bottom = 10.dp, start = 4.dp, end = 4.dp)
             .clickable {
-                //pass animal object to Details Screen
-                navController.currentBackStackEntry?.arguments?.putParcelable(
+                // Use savedStateHandle to pass the animal object
+                navController.currentBackStackEntry?.savedStateHandle?.set(
                     Constants.ANIMAL_DETAILS_KEY,
                     animal
                 )
@@ -44,7 +44,7 @@ fun AnimalViewContent(animal: Animal, navController: NavHostController) {
             horizontalAlignment = Alignment.Start
         ) {
             val model = ImageRequest.Builder(LocalContext.current)
-                .data("${animal.image}")
+                .data(animal.image)
                 .size(Size.ORIGINAL)
                 .crossfade(true)
                 .build()
@@ -68,7 +68,7 @@ fun AnimalViewContent(animal: Animal, navController: NavHostController) {
                     .padding(8.dp),
             ) {
                 Text(
-                    text = "${animal.name}",
+                    text = animal.name,
                     fontSize = 14.sp,
                     overflow = TextOverflow.Ellipsis,
                     maxLines = 1,

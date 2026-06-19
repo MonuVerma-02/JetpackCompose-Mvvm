@@ -3,7 +3,7 @@ package com.jetpack.compose.presentation.model
 import android.os.Parcelable
 import com.jetpack.compose.presentation.utils.default
 import com.jetpack.compose.presentation.utils.empty
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Animal(

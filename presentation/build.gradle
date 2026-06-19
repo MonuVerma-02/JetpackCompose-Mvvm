@@ -1,17 +1,17 @@
 plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
-    id 'kotlin-android-extensions'
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.kotlin.parcelize)
 }
 
 android {
-    compileSdk 32
+    namespace 'com.jetpack.compose.presentation'
+    compileSdk 35
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -24,14 +24,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
     kotlinOptions {
-        jvmTarget = '1.8'
-    }
-    androidExtensions {
-        features = ["parcelize"]
+        jvmTarget = '21'
     }
 }
 
@@ -39,22 +36,22 @@ dependencies {
 
     implementation project(path: ':domain')
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.6.1'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.com.google.android.material
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.test.ext.junit
+    androidTestImplementation libs.androidx.test.espresso.core
 
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+    implementation libs.androidx.lifecycle.viewmodel.ktx
 
     // Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_core_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.kotlinx.coroutines.android
 
     //Dagger - Hilt
-    implementation "com.google.dagger:hilt-android:$dagger_hilt"
-    kapt "com.google.dagger:hilt-android-compiler:$dagger_hilt"
-    kapt "androidx.hilt:hilt-compiler:$hilt_compiler"
-    implementation "androidx.hilt:hilt-navigation-compose:$hilt_navigation"
+    implementation libs.hilt.android
+    kapt libs.hilt.android.compiler
+    kapt libs.androidx.hilt.compiler
+    implementation libs.androidx.hilt.navigation.compose
 }

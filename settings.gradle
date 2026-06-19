@@ -15,6 +15,5 @@ dependencyResolutionManagement {
 rootProject.name = "JetpackComposeMVVM"
 include ':app'
 include ':data'
-include ':domin'
 include ':domain'
 include ':presentation'

@@ -45,18 +45,13 @@ fun ConnectivityStatus(
     }
 
     LaunchedEffect(isConnected) {
-        if (!isConnected) {
-            visibility = true
-        } else {
-            delay(2000)
-            visibility = false
+        delay(2000)
 
-            if (dogState.value.animals.isEmpty()
-                && catState.value.animals.isEmpty()
-                && rabbitState.value.animals.isEmpty()
-            ) {
-                updatedOnRefresh.value.invoke()
-            }
+        if (dogState.value.animals.isEmpty()
+            && catState.value.animals.isEmpty()
+            && rabbitState.value.animals.isEmpty()
+        ) {
+            updatedOnRefresh.value.invoke()
         }
     }
 }

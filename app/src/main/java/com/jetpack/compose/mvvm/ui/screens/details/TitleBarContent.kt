@@ -56,7 +56,7 @@ fun TitleBarMessage(animal: Animal) {
     ) {
         Text(
             modifier = Modifier.padding(top = 5.dp),
-            text = "${animal.name}",
+            text = animal.name,
             fontSize = 18.sp,
             fontWeight = FontWeight.Bold,
             fontFamily = FontFamily.Monospace

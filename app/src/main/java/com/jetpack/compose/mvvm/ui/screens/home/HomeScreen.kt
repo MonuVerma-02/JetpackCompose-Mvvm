@@ -20,7 +20,9 @@ import com.jetpack.compose.mvvm.ui.screens.utils.*
 import com.jetpack.compose.presentation.model.Animal
 import com.jetpack.compose.presentation.viewmodel.AnimalState
 import com.jetpack.compose.presentation.viewmodel.HomeViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@OptIn(ExperimentalCoroutinesApi::class)
 @Composable
 fun HomeScreen(
     navController: NavHostController,
